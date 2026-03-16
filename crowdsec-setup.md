@@ -24,11 +24,16 @@ sudo apt install -y crowdsec
 sudo apt install -y crowdsec-firewall-bouncer-iptables
 ```
 
-### 2.3 Enroll in CrowdSec Console (ask the user for enrollment key if needed)
+### 2.3 Enroll in CrowdSec Console
+
+Ask the user for their CrowdSec Console enrollment key. Do NOT proceed without it.
 
 ```bash
-sudo cscli console enroll <KEY>
+sudo cscli console enroll <KEY_PROVIDED_BY_USER>
+sudo systemctl reload crowdsec
 ```
+
+After enrollment, tell the user to accept the engine in the CrowdSec Console (https://app.crowdsec.net → Security Engines → Accept).
 
 ### 2.4 Continue to Step 3 for collection setup
 
